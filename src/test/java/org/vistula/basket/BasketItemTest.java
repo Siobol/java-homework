@@ -22,7 +22,7 @@ public class BasketItemTest {
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(wine);
         basket.add(vodka);
-        assertThat(Julek.sumItemsPrice() == 68).isTrue();
+        assertThat(Julek.sumItemsPrice()==68).isTrue();
     }
 
     @Test
@@ -33,7 +33,7 @@ public class BasketItemTest {
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(wine);
         basket.add(vodka);
-        assertThat(Julek.sumItemsPrice() == 67).isFalse();
+        assertThat(Julek.sumItemsPrice()==67).isFalse();
     }
 
     @Test
@@ -44,7 +44,7 @@ public class BasketItemTest {
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(wine);
         basket.add(vodka);
-        assertThat(Julek.sumItemsPrice() == 69).isFalse();
+        assertThat(Julek.sumItemsPrice()==69).isFalse();
     }
 
     @Test
@@ -99,7 +99,6 @@ public class BasketItemTest {
     public void canReducePricePositive(){
         BasketItem winepromo = new PromoItem(30, true, 10);
         List<BasketItem> basket = new ArrayList<>();
-        Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(winepromo);
         assertThat(winepromo.getPrice()==27).isTrue();
     }
@@ -108,7 +107,6 @@ public class BasketItemTest {
     public void canReducePriceNegative1(){
         BasketItem winepromo = new PromoItem(30, true, 10);
         List<BasketItem> basket = new ArrayList<>();
-        Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(winepromo);
         assertThat(winepromo.getPrice()==26).isFalse();
     }
@@ -117,7 +115,6 @@ public class BasketItemTest {
     public void canReducePriceNegative2(){
         BasketItem winepromo = new PromoItem(30, true, 10);
         List<BasketItem> basket = new ArrayList<>();
-        Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(winepromo);
         assertThat(winepromo.getPrice()==28).isFalse();
     }
