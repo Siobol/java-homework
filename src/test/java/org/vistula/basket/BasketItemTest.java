@@ -22,7 +22,7 @@ public class BasketItemTest {
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(wine);
         basket.add(vodka);
-        assertThat(Julek.sumItemsPrice()==68).isTrue();
+        assertThat(Julek.sumItemsPrice()).isEqualTo(68);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class BasketItemTest {
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(wine);
         basket.add(vodka);
-        assertThat(Julek.sumItemsPrice()==67).isFalse();
+        assertThat(Julek.sumItemsPrice()).isNotEqualTo(67);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class BasketItemTest {
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
         basket.add(wine);
         basket.add(vodka);
-        assertThat(Julek.sumItemsPrice()==69).isFalse();
+        assertThat(Julek.sumItemsPrice()).isNotEqualTo(69);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class BasketItemTest {
     }
 
     @Test
-    public void canRemoveItemPositive(){
+    public void canRemoveItemPositive() {
         BasketItem wine = new BasketItem(29, true);
         List<BasketItem> basket = new ArrayList<>();
         Customer Julek = new Customer("Julek", "Testowania", 18, basket);
@@ -85,7 +85,7 @@ public class BasketItemTest {
     }
 
     @Test
-    public void canRemoveItemNegative(){
+    public void canRemoveItemNegative() {
         BasketItem wine = new BasketItem(29, true);
         BasketItem vodka = new BasketItem(39, true);
         List<BasketItem> basket = new ArrayList<>();
@@ -96,34 +96,34 @@ public class BasketItemTest {
     }
 
     @Test
-    public void canReducePricePositive(){
+    public void canReducePricePositive() {
         BasketItem winepromo = new PromoItem(30, true, 10);
         List<BasketItem> basket = new ArrayList<>();
         basket.add(winepromo);
-        assertThat(winepromo.getPrice()==27).isTrue();
+        assertThat(winepromo.getPrice()).isEqualTo(27);
     }
 
     @Test
-    public void canReducePriceNegative1(){
+    public void canReducePriceNegative1() {
         BasketItem winepromo = new PromoItem(30, true, 10);
         List<BasketItem> basket = new ArrayList<>();
         basket.add(winepromo);
-        assertThat(winepromo.getPrice()==26).isFalse();
+        assertThat(winepromo.getPrice()).isNotEqualTo(26);
     }
 
     @Test
-    public void canReducePriceNegative2(){
+    public void canReducePriceNegative2() {
         BasketItem winepromo = new PromoItem(30, true, 10);
         List<BasketItem> basket = new ArrayList<>();
         basket.add(winepromo);
-        assertThat(winepromo.getPrice()==28).isFalse();
+        assertThat(winepromo.getPrice()).isNotEqualTo(28);
     }
 
     @Test
-    public void canPrintItemsPositive(){
+    public void canPrintItemsPositive() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        String expectedOutput  = "29.0 name of the item; 39.0 name of the item; ";
+        String expectedOutput = "29.0 name of the item; 39.0 name of the item; ";
         BasketItem wine = new BasketItem(29, true);
         BasketItem vodka = new BasketItem(39, true);
         List<BasketItem> basket = new ArrayList<>();
@@ -135,10 +135,10 @@ public class BasketItemTest {
     }
 
     @Test
-    public void canPrintItemsNegative(){
+    public void canPrintItemsNegative() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        String expectedOutput  = "29.0 name of the item; 39.0 name of the items; ";
+        String expectedOutput = "29.0 name of the item; 39.0 name of the items; ";
         BasketItem wine = new BasketItem(29, true);
         BasketItem vodka = new BasketItem(39, true);
         List<BasketItem> basket = new ArrayList<>();

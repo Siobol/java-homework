@@ -21,9 +21,16 @@ public class CustomerTest {
     }
 
     @Test
-    public void isAdultNegative() {
+    public void isAdultNegative1() {
         Customer Julek = new Customer();
         Julek.setAge(17);
+        assertThat(Julek.isOfAge()).isFalse();
+    }
+
+    @Test
+    public void isAdultNegative2() {
+        Customer Julek = new Customer();
+        Julek.setAge(0);
         assertThat(Julek.isOfAge()).isFalse();
     }
 }

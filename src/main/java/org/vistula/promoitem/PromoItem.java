@@ -11,7 +11,7 @@ public class PromoItem extends BasketItem {
         this.discount = discount;
     }
 
-    public PromoItem(){
+    public PromoItem() {
     }
 
     public float getDiscount() {

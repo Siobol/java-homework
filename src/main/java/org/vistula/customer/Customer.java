@@ -17,7 +17,7 @@ public class Customer {
         this.basket = basket;
     }
 
-    public Customer (){
+    public Customer() {
     }
 
     public String getFirstName() {
@@ -53,48 +53,47 @@ public class Customer {
     }
 
     public boolean isOfAge() {
-        if (age >= 18){
-            return true;}
-        else {
-            return false;}
+        if (age >= 18) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public float sumItemsPrice(){
+    public float sumItemsPrice() {
         float sum = 0;
 //     for (int i = 0; i < basket.size(); i++) {
 //         sum += basket.get(i).getPrice();
 //     }
         // with the use of for each
-        for (BasketItem item:
+        for (BasketItem item :
                 basket) {
             sum += item.getPrice();
         }
         return sum;
     }
 
-    public void addItem(BasketItem item){
-        if(item.isAgeRestrictedItem())
-        {
-            if (isOfAge())
-            {basket.add(item);
-            }
-            else
-            {return;
+    public void addItem(BasketItem item) {
+        if (item.isAgeRestrictedItem()) {
+            if (isOfAge()) {
+                basket.add(item);
+            } else {
+                return;
             }
         }
         basket.add(item);
     }
 
-    public void printItems(){
-        for (BasketItem item:
+    public void printItems() {
+        for (BasketItem item :
                 basket) {
             System.out.print(item.toString());
         }
     }
 
-    public void removeItem(BasketItem item){
-        if(basket.contains(item))
-        {basket.remove(item);
+    public void removeItem(BasketItem item) {
+        if (basket.contains(item)) {
+            basket.remove(item);
         }
     }
 }
